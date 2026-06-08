@@ -50,6 +50,9 @@ header{
 
 h1{
     margin:0;
+    /* 画面幅（vw）に合わせて文字サイズを自動調整。最小1.1rem〜最大2rem */
+    font-size: clamp(1.1rem, 4.5vw, 2rem); 
+    white-space: nowrap; /* 絶対に折り返さないお守り */
 }
 
 .subtitle{
