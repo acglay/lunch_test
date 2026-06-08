@@ -9,15 +9,13 @@
 <style>
 :root{
     --bg:#f5f7fa;
-    --card:#ffffff;
+    --card:#fff;
     --text:#222;
     --sub:#666;
     --accent:#2563eb;
 }
 
-*{
-    box-sizing:border-box;
-}
+*{ box-sizing:border-box; }
 
 body{
     margin:0;
@@ -43,7 +41,6 @@ header h1{
 header p{
     margin:6px 0 0;
     color:var(--sub);
-    font-size:14px;
 }
 
 .container{
@@ -67,10 +64,9 @@ header p{
 .tag{
     display:inline-block;
     background:#eef4ff;
-    color:#234;
-    font-size:12px;
-    padding:4px 10px;
     border-radius:999px;
+    padding:4px 10px;
+    font-size:12px;
 }
 
 h2{
@@ -83,27 +79,32 @@ h2{
 }
 
 .rating{
-    margin-top:10px;
+    margin-top:12px;
     background:#f7f7f7;
-    border-radius:10px;
+    border-radius:12px;
     padding:10px;
+}
+
+.preview{
+    background:#fafafa;
+    border-top:1px solid #eee;
 }
 
 iframe{
     width:100%;
     height:420px;
     border:none;
-    background:#fafafa;
 }
 
 .actions{
     padding:16px;
     display:flex;
-    gap:12px;
     flex-wrap:wrap;
+    gap:10px;
 }
 
 .btn{
+    display:inline-block;
     text-decoration:none;
     background:var(--accent);
     color:white;
@@ -113,13 +114,19 @@ iframe{
 }
 
 .btn.secondary{
-    background:#555;
+    background:#666;
+}
+
+.note{
+    font-size:13px;
+    color:#777;
+    margin-top:8px;
 }
 
 .footer{
     text-align:center;
-    color:#777;
     padding:30px;
+    color:#777;
 }
 
 @media (max-width:700px){
@@ -130,47 +137,64 @@ iframe{
 </style>
 
 </head>
-
 <body>
 
 <header>
     <h1>🍔 東陽町ランチ候補選手権</h1>
-    <p>気になるお店を比較して次回ランチ先を決めよう</p>
+    <p>スマホで眺めながら比較する実験版</p>
 </header>
 
 <div class="container">
 
 ```
+<!-- Louis -->
 <div class="card">
     <div class="hero">
         <span class="tag">ハンバーガー枠</span>
         <h2>Louis Hamburger Restaurant</h2>
+
         <div class="comment">
-            本格派バーガー候補。ボリュームと満足感に期待。
+            本格バーガー候補。今回は店舗紹介動画を埋め込み。
         </div>
+
         <div class="rating">
             🍔 満足度 ★★★★★<br>
-            📸 映え度 ★★★★☆<br>
-            🚶 散歩度 ★★★☆☆
+            📷 映え度 ★★★★★<br>
+            🍟 ジャンク感 ★★★★★
+        </div>
+
+        <div class="note">
+            ※ YouTube埋め込み
         </div>
     </div>
 
-    <iframe src="https://maps.app.goo.gl/L6a3QuoiNfwh1msH9"></iframe>
+    <div class="preview">
+        <iframe
+            src="https://www.youtube.com/embed/N-nyGpf32wY"
+            allowfullscreen>
+        </iframe>
+    </div>
 
     <div class="actions">
-        <a class="btn" href="https://maps.app.goo.gl/L6a3QuoiNfwh1msH9" target="_blank">
-            Open Maps
+        <a class="btn"
+           href="https://maps.app.goo.gl/L6a3QuoiNfwh1msH9"
+           target="_blank">
+           Google Maps
         </a>
     </div>
 </div>
 
+<!-- HARU -->
 <div class="card">
     <div class="hero">
         <span class="tag">ベタ枠</span>
         <h2>Dining Cafe HARU</h2>
+
         <div class="comment">
-            安定感のあるカフェランチ。迷ったらここ。
+            安定感のあるカフェランチ候補。
+            OZmall掲載ページを埋め込み。
         </div>
+
         <div class="rating">
             ☕ 安定感 ★★★★★<br>
             🍽 バランス ★★★★★<br>
@@ -178,48 +202,77 @@ iframe{
         </div>
     </div>
 
-    <iframe src="https://cloversdiner.owst.jp/"></iframe>
+    <div class="preview">
+        <iframe
+            src="https://www.ozmall.co.jp/restaurant/9364/">
+        </iframe>
+    </div>
 
     <div class="actions">
-        <a class="btn" href="https://maps.app.goo.gl/czJuWGhUe8kCqD4G8" target="_blank">
-            Open Maps
+        <a class="btn"
+           href="https://maps.app.goo.gl/czJuWGhUe8kCqD4G8"
+           target="_blank">
+           Google Maps
         </a>
-        <a class="btn secondary" href="https://cloversdiner.owst.jp/" target="_blank">
-            Open Site
+
+        <a class="btn secondary"
+           href="https://www.ozmall.co.jp/restaurant/9364/"
+           target="_blank">
+           OZmall
         </a>
     </div>
 </div>
 
+<!-- goodcoffee -->
 <div class="card">
     <div class="hero">
         <span class="tag">おしゃれ枠</span>
         <h2>goodcoffee 東陽町 by goodroom</h2>
+
         <div class="comment">
-            雰囲気重視なら最有力。コーヒー好き向け。
+            雰囲気重視なら最有力。
+            Corner掲載ページを埋め込み。
         </div>
+
         <div class="rating">
             📷 おしゃれ度 ★★★★★<br>
             ☕ コーヒー度 ★★★★★<br>
-            🍽 満腹度 ★★☆☆☆
+            🌿 作業適性 ★★★★☆
         </div>
     </div>
 
-    <iframe src="https://coool.cafe/cafe/goodcoffee-%E6%9D%B1%E9%99%BD%E7%94%BA-by-goodroom-tokyo"></iframe>
+    <div class="preview">
+        <iframe
+            src="https://www.corner.inc/place/pk3hnkGCczqW">
+        </iframe>
+    </div>
 
     <div class="actions">
-        <a class="btn" href="https://maps.app.goo.gl/GQUkW82Y9DG2ktVL6" target="_blank">
-            Open Maps
+        <a class="btn"
+           href="https://maps.app.goo.gl/GQUkW82Y9DG2ktVL6"
+           target="_blank">
+           Google Maps
+        </a>
+
+        <a class="btn secondary"
+           href="https://www.corner.inc/place/pk3hnkGCczqW"
+           target="_blank">
+           Corner
         </a>
     </div>
 </div>
 
+<!-- 江東食堂 -->
 <div class="card">
     <div class="hero">
         <span class="tag">ネタ枠</span>
         <h2>江東食堂</h2>
+
         <div class="comment">
-            免許試験場の食堂。意外な掘り出し物があるかもしれない。
+            免許試験場の食堂。
+            今回はGoogle Maps Embed版。
         </div>
+
         <div class="rating">
             🎲 ネタ度 ★★★★★<br>
             💰 コスパ ★★★★★<br>
@@ -227,22 +280,32 @@ iframe{
         </div>
     </div>
 
-    <iframe src="https://maps.app.goo.gl/TEyZi3X5kgNY4oacA"></iframe>
+    <div class="preview">
+        <iframe
+            src="https://www.google.com/maps?q=%E6%B1%9F%E6%9D%B1%E9%A3%9F%E5%A0%82&output=embed">
+        </iframe>
+    </div>
 
     <div class="actions">
-        <a class="btn" href="https://maps.app.goo.gl/TEyZi3X5kgNY4oacA" target="_blank">
-            Open Maps
+        <a class="btn"
+           href="https://maps.app.goo.gl/TEyZi3X5kgNY4oacA"
+           target="_blank">
+           Google Maps
         </a>
     </div>
 </div>
 
+<!-- KIBACO -->
 <div class="card">
     <div class="hero">
         <span class="tag">公園カフェ枠</span>
         <h2>Park Community KIBACO</h2>
+
         <div class="comment">
-            木場公園の空気を感じながらのんびりランチ。
+            木場公園横の開放的なカフェ。
+            現時点でiframe表示成功実績あり。
         </div>
+
         <div class="rating">
             🐕 犬遭遇率 ★★★★★<br>
             🌳 公園度 ★★★★★<br>
@@ -250,14 +313,23 @@ iframe{
         </div>
     </div>
 
-    <iframe src="https://park-community-kibaco.com/cafe/"></iframe>
+    <div class="preview">
+        <iframe
+            src="https://park-community-kibaco.com/cafe/">
+        </iframe>
+    </div>
 
     <div class="actions">
-        <a class="btn" href="https://maps.app.goo.gl/AwYQpfrNphadgWgEA" target="_blank">
-            Open Maps
+        <a class="btn"
+           href="https://maps.app.goo.gl/AwYQpfrNphadgWgEA"
+           target="_blank">
+           Google Maps
         </a>
-        <a class="btn secondary" href="https://park-community-kibaco.com/cafe/" target="_blank">
-            Open Site
+
+        <a class="btn secondary"
+           href="https://park-community-kibaco.com/cafe/"
+           target="_blank">
+           Official Site
         </a>
     </div>
 </div>
@@ -266,7 +338,7 @@ iframe{
 </div>
 
 <div class="footer">
-    東陽町ランチ候補比較ページ
+    iframe成功率調査版 v1
 </div>
 
 </body>
